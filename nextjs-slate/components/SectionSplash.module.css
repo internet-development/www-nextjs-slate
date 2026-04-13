@@ -1,0 +1,30 @@
+.body {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  margin-top: 128px;
+  min-height: 478px;
+  background: linear-gradient(-90deg, var(--color-subdued-border) 1px, transparent 1px), linear-gradient(var(--color-subdued-border) 1px, transparent 1px);
+  background-size:
+    20px 20px,
+    20px 20px,
+    100px 100px,
+    100px 100px,
+    100px 100px,
+    100px 100px,
+    100px 100px,
+    100px 100px;
+}
+
+@media (max-width: 568px) {
+  .body {
+    min-height: auto;
+  }
+}
+
+.image {
+  display: block;
+  width: 100%;
+  max-width: 568px;
+  padding-left: 48px;
+}

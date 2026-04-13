@@ -1,0 +1,51 @@
+.full {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.body {
+  max-width: 768px;
+  width: 100%;
+}
+
+.h1 {
+  font-size: 1.5rem;
+}
+
+.p {
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 1.5;
+  margin-top: 48px;
+  max-width: 568px;
+}
+
+.actions {
+  padding: 24px 24px 24px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.link {
+  color: var(--color-text);
+  transition: 200ms ease all;
+}
+
+.link:visited {
+  color: var(--color-text);
+}
+
+.link:hover {
+  opacity: 0.6;
+}
+
+.subFooter {
+  padding: 0px 24px 128px 24px;
+}

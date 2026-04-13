@@ -1,0 +1,29 @@
+.button {
+  height: 24px;
+  width: 24px;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+  background: var(--color-button);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px auto 0 auto;
+  transition: 200ms ease all;
+  cursor: pointer;
+  color: var(--color-text);
+  text-decoration: none;
+  user-select: none;
+}
+
+.button:visited {
+  color: var(--color-text);
+}
+
+.button:hover {
+  background: var(--color-button-hover);
+}
+
+.button svg {
+  flex-shrink: 0;
+  pointer-events: none;
+}

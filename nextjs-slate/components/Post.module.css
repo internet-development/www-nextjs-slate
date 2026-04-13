@@ -1,0 +1,19 @@
+.body {
+  width: 100%;
+  max-width: 768px;
+  padding: 24px 24px 128px 24px;
+}
+
+.body a {
+  color: var(--color-primary);
+  transition: 200ms ease all;
+  cursor: pointer;
+}
+
+.body a:visited {
+  color: var(--color-primary);
+}
+
+.body a:hover {
+  opacity: 0.5;
+}

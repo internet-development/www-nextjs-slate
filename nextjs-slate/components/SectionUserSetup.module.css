@@ -1,0 +1,30 @@
+.section {
+}
+
+.top {
+  height: 301px;
+  width: 100%;
+  background: linear-gradient(-90deg, var(--color-border) 1px, transparent 1px), linear-gradient(var(--color-border) 1px, transparent 1px);
+  background-size:
+    20px 20px,
+    20px 20px,
+    100px 100px,
+    100px 100px,
+    100px 100px,
+    100px 100px,
+    100px 100px,
+    100px 100px;
+}
+
+.content {
+  padding: 24px;
+}
+
+.block {
+  border-top: 1px solid var(--color-border);
+  max-width: 768px;
+}
+
+.block:first-child {
+  border-top: 0px;
+}

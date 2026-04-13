@@ -1,0 +1,99 @@
+.section {
+  margin-top: 40px;
+}
+
+.h1 {
+  font-size: 2.225rem;
+  margin-bottom: 8px;
+}
+
+.top {
+  height: 301px;
+  width: 100%;
+  background: linear-gradient(-90deg, var(--color-border) 1px, transparent 1px), linear-gradient(var(--color-border) 1px, transparent 1px);
+  background-size:
+    20px 20px,
+    20px 20px,
+    100px 100px,
+    100px 100px,
+    100px 100px,
+    100px 100px,
+    100px 100px,
+    100px 100px;
+}
+
+.link {
+  color: var(--color-text);
+  transition: 200ms ease all;
+}
+
+.link:visited {
+  color: var(--color-text);
+}
+
+.link:hover {
+  opacity: 0.6;
+}
+
+.content {
+  padding: 24px;
+}
+
+.block {
+  max-width: 768px;
+}
+
+.block:first-child {
+  border-top: 0px;
+}
+
+.root {
+  border-top: 1px solid var(--color-border);
+  width: 100%;
+  margin-top: 128px;
+  padding-bottom: 128px;
+}
+
+.hero {
+  max-width: 488px;
+  padding-top: 184px;
+  text-align: left;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.column {
+  box-shadow: 1px 0 0 0 var(--color-border);
+  text-align: left;
+  width: 33.3333%;
+  -webkit-appearance: none;
+}
+
+.column:last-child {
+  box-shadow: 0px 0 0 0 var(--color-border);
+}
+
+.list {
+  display: block;
+  margin-top: 1rem;
+  font-size: 12px;
+  line-height: 1.6;
+  font-weight: 400;
+  padding-left: 16px;
+}
+
+.pricingHeader {
+  margin-bottom: 88px;
+  min-width: 10%;
+  width: 100%;
+  min-height: 10%;
+  height: 100%;
+}
+
+.bottom {
+  flex-shrink: 0;
+}

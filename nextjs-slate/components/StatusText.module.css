@@ -1,0 +1,9 @@
+.root {
+  font-family: 'Mono';
+  font-size: 10px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 24px;
+}

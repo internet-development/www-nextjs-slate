@@ -1,0 +1,160 @@
+@font-face {
+  font-family: 'Mono';
+  src: url('https://next-s3-public.s3.us-west-2.amazonaws.com/mono.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'System';
+  src: url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/84f8050c-958a-48d8-ab5b-b46672e50df2.woff') format('woff');
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  box-sizing: border-box;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+html,
+body {
+  --color-background: #fffefe;
+  --color-text: #0e101b;
+  --color-border: #e5e5e5;
+  --color-button: #e5e5e5;
+  --color-button-active: #0e101b;
+  --color-button-hover: #fff;
+  --color-input: #fff;
+  --color-primary: #0047ff;
+  --color-subdued-border: rgba(0, 0, 0, 0.07);
+  --color-accent: rgba(1, 141, 255, 0.1);
+  --color-success: rgba(68, 198, 127, 1);
+  --color-subdued-success: rgba(106, 243, 168, 0.3);
+  --color-error: rgba(239, 68, 68, 1);
+
+  font-size: 16px;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    helvetica neue,
+    helvetica,
+    sans-serif;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: transparent;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: var(--color-border);
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background: var(--color-subdued-border);
+}
+
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+  background: var(--color-subdued-border);
+}

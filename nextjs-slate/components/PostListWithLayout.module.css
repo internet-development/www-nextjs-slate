@@ -1,0 +1,52 @@
+.row {
+  padding: 13px 16px 16px 16px;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto auto;
+}
+
+@media (max-width: 768px) {
+  .row {
+    display: block;
+  }
+}
+
+.item {
+  font-family: 'Mono';
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+  padding-right: 24px;
+}
+
+.item a {
+  color: var(--color-text);
+  transition: 200ms ease all;
+  cursor: pointer;
+}
+
+.item a:visited {
+  color: var(--color-text);
+}
+
+.item a:hover {
+  opacity: 0.8;
+}
+
+.link {
+  cursor: pointer;
+  background: var(--color-subdued-border);
+  padding: 4px;
+}
+
+.link:hover {
+  opacity: 0.8;
+}
+
+.list {
+  display: block;
+  padding: 18px;
+}
+
+.listItem {
+  line-height: 1.5;
+}
