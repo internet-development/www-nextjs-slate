@@ -17,7 +17,7 @@ export default function Post(props) {
 
   return (
     <div className={styles.body}>
-      <Editable autoFocus={props.autoFocus} className={styles.editor} onDOMBeforeInput={props.onDOMBeforeInput} onKeyDown={(e) => props.onKeyDown(e, editor)} placeholder={props.placeholder} readOnly={props.readOnly} renderElement={renderElement} renderLeaf={renderLeaf} spellCheck={props.spellCheck} style={{ outline: 0, border: 0 }} />
+      <Editable autoFocus={props.autoFocus} className={styles.editor} onDOMBeforeInput={props.onDOMBeforeInput} onKeyDown={(e) => props.onKeyDown?.(e, editor)} placeholder={props.placeholder} readOnly={props.readOnly} renderElement={renderElement} renderLeaf={renderLeaf} spellCheck={props.spellCheck} style={{ outline: 0, border: 0 }} />
     </div>
   );
 }

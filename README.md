@@ -4,7 +4,7 @@ A minimalist WYSIWYG writing tool built with Next.js, React, and Slate.js. Power
 
 ## Setup
 
-Requires Node.js >= 18.
+Requires Node.js >= 20.9.
 
 ```sh
 npm install
@@ -20,6 +20,7 @@ Visit `http://localhost:10000`.
 | `npm run dev` | Start dev server on port 10000 |
 | `npm run build` | Production build |
 | `npm start` | Start production server on port 10000 |
+| `npm run script <name>` | Run `scripts/<name>.js` with Node |
 
 ## Environment Variables
 

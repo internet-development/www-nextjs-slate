@@ -41,7 +41,7 @@ export async function generateMetadata() {
 }
 
 export default async function Page(props) {
-  const list = headers();
+  const list = await headers();
   const { cookie, host, protocol, viewer } = await Server.setup({ headers: list });
 
   if (!viewer) {

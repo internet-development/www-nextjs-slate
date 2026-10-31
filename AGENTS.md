@@ -13,11 +13,12 @@ All branding and domain constants are centralized in `nextjs-slate/common/consta
 
 ## Tech Stack
 
-- **Next.js** ^16 with App Router (not Pages Router, except for `/pages/oauth.tsx`)
-- **React** ^19 with function components
-- **TypeScript** ^5.9 (strict mode off, strictNullChecks off)
-- **Slate.js** ^0.123 for rich text editing (slate, slate-react, slate-dom, slate-history)
-- **UUID** ^13 for unique identifiers
+- **Node.js** >=20.9.0 (the minimum required by Next.js)
+- **Next.js** ^16.4 with App Router (not Pages Router, except for `/pages/oauth.tsx`)
+- **React** ^19.3 with function components
+- **TypeScript** ^7 (strict mode off, strictNullChecks off). TypeScript 7 has no JavaScript compiler API, so `next build` type-checks through the `tsc` CLI, and API-based tools such as `ts-node` do not work
+- **Slate.js** ^0.147 for rich text editing (slate, slate-react, slate-dom; slate-history ^0.144)
+- **UUID** ^14 (declared dependency; not currently imported by any source file)
 - **No state management library** — React state + props only
 
 ---
@@ -28,7 +29,7 @@ All branding and domain constants are centralized in `nextjs-slate/common/consta
 app/                        → Next.js App Router pages
   ├── page.tsx              → Home page (sign in or welcome)
   ├── layout.tsx            → Root layout
-  ├── head.tsx              → Root head metadata
+  ├── head.tsx              → Inert: `head.tsx` is not an App Router file convention, so it is never rendered. Page metadata comes from `generateMetadata` in each `page.tsx`
   ├── robots.ts             → SEO robots.txt
   ├── sitemap.ts            → Dynamic sitemap
   ├── -/upgrade/            → Subscription/upgrade page
@@ -48,6 +49,10 @@ nextjs-slate/                    → Application source code
   │   └── slate-types.d.ts  → Slate custom type declarations
   ├── components/           → React components + CSS modules
   └── modules/              → Utility modules (cookies, hooks, hotkeys)
+scripts/
+  └── index.js              → Runner for `npm run script <name>`, which loads `scripts/<name>.js`
+skills/
+  └── create-next-slate-post/SKILL.md → API guide for creating and publishing posts
 ```
 
 ---
@@ -186,7 +191,7 @@ Bold (`Cmd+B`), Italic (`Cmd+I`), Underline (`Cmd+U`), Code (`Cmd+\``)
 
 ### API Markdown Support
 
-Posts created or updated via the API with a `markdown` field will have their `editorContent.children` pre-populated with parsed Slate nodes. The parser (in the apis repo at `common/markdown.ts`) converts standard markdown into the exact Slate node shapes listed above. When editing such a post in the txt.dev editor, the content renders natively with full formatting. Supported: headings, bold, italic, inline code, block quotes, bulleted/numbered lists, images, and links.
+Posts created or updated via the API with a `markdown` field will have their `editorContent.children` pre-populated with parsed Slate nodes. The parser (in the apis repo at `common/markdown.ts`) converts standard markdown into the exact Slate node shapes listed above. When editing such a post in the editor, the content renders natively with full formatting. Supported: headings, bold, italic, inline code, block quotes, bulleted/numbered lists, images, and links.
 
 ---
 
@@ -278,8 +283,22 @@ npm install          # Install dependencies
 npm run dev          # Dev server on port 10000
 npm run build        # Production build
 npm start            # Production server on port 10000
-npm run script       # Run TypeScript scripts via ts-node
+npm run script <name> # Run scripts/<name>.js with Node
 ```
+
+---
+
+## Verification
+
+There is no test suite. Use these checks:
+
+```sh
+npx tsc --noEmit --incremental false   # Type check
+npm run build                          # Production build, including the same tsc type check
+npm audit                              # Dependency vulnerabilities
+```
+
+`next build`, `next dev`, and `next typegen` regenerate the tracked `next-env.d.ts`. Do not commit that churn. `Editable` handlers run in read-only mode, so optional handler props in `Post.tsx` must tolerate being undefined.
 
 ---
 

@@ -140,7 +140,7 @@ export const wrapLink = (editor, url: string) => {
 export const withShortcuts = (editor) => {
   const { deleteBackward, insertText } = editor;
 
-  editor.insertText = (text) => {
+  editor.insertText = (text, options) => {
     const { selection } = editor;
 
     if (text.endsWith(' ') && selection && Range.isCollapsed(selection)) {
@@ -182,7 +182,7 @@ export const withShortcuts = (editor) => {
       }
     }
 
-    insertText(text);
+    insertText(text, options);
   };
 
   editor.deleteBackward = (...args) => {
@@ -226,11 +226,11 @@ export const withInlines = (editor) => {
 
   editor.isInline = (element) => ['link'].includes(element.type) || isInline(element);
 
-  editor.insertText = (text) => {
+  editor.insertText = (text, options) => {
     if (text && Utilities.isURL(text)) {
       wrapLink(editor, text);
     } else {
-      insertText(text);
+      insertText(text, options);
     }
   };
 

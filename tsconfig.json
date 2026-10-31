@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
       "@root/*": [
         "./*"
@@ -12,7 +11,7 @@
         "./pages/*"
       ]
     },
-    "target": "es5",
+    "target": "es2017",
     "lib": [
       "dom",
       "dom.iterable",
